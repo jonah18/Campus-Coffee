@@ -13,6 +13,7 @@ eggs/
 .eggs/
 lib/
 var/
+pip-selfcheck.json
 
 # Unit test / coverage reports
 htmlcov/
@@ -38,4 +39,5 @@ venv.bak/
 # PyCharm
 .idea/
 
+# Credentials
 config.py
