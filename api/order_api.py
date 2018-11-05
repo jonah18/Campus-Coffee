@@ -3,7 +3,7 @@ from flask import *
 from modules import Order
 from twilio.rest import Client
 
-order_api = Blueprint('about', __name__)
+order_api = Blueprint('order_api', __name__)
 
 twilio_client = Client(conf.twilio_sid, conf.twilio_auth_token)
 
@@ -20,7 +20,7 @@ def order_api_route():
            f'Please respond with the customer number beginning with +1'
 
     msg = twilio_client.messages.create(
-        to=conf.NUMBER_BY_NAME['Jonah'],
+        to=conf.NUMBER_BY_NAME['Sarit'],
         from_=conf.TWILIO_NUMBER,
         body=body)
 

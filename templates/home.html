@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/send" method="post" id="order_form">
+    <fieldset>
+        <legend>Order Information:</legend>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="shop">Shop:</label><br>
+        <select id="shop" name="shop" required>
+            <option value="starbucks">Starbucks</option>
+            <option value="royale">Espresso Royale</option>
+        </select><br>
+        <label for="size">Size</label><br>
+        <input type="text" id="size" name="size" required><br>
+        <label for="drink">Drink:</label><br>
+        <input type="text" id="drink" name="drink" required><br>
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location"><br>
+        <label for="customer_number">Phone Number:</label><br>
+        <input type="text" id="customer_number" name="customer_number"><br>
+        <label for="details">Order Details:</label><br>
+        <textarea rows="4" cols="50" id="details" name="details" form="order_form">i.e. cream and sugar</textarea>
+        <br><br>
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+{% endblock %}
