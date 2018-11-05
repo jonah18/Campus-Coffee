@@ -20,7 +20,7 @@ def order_api_route():
            f'Please respond with the customer number beginning with +1'
 
     msg = twilio_client.messages.create(
-        to=conf.NUMBER_BY_NAME['Sarit'],
+        to=conf.NUMBER_BY_NAME['Jonah'],
         from_=conf.TWILIO_NUMBER,
         body=body)
 
