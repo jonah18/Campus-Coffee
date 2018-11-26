@@ -18,12 +18,15 @@ def purchase_route():
 
 def send_order(request_form):
     """Send order to Order API."""
-    order_url = config.api_base_url + "/api/order"
-    r = requests.post(order_url, json=request_form)
+    order_url = config.api_base_url + '/api/order'
+    resp = requests.post(order_url, json=request_form).json()
 
-    options = {
-        'admin_message': 'Your order has been made and you will '
-                         'receive a confirmation text shortly.'
-    }
+    options = {}
+    if resp['status'] == 'failure':
+        options['admin_message'] = 'Sorry, there are no deliverers available' \
+                                   'for this shop, please try again later.'
+    else:
+        options['admin_message'] = 'Your order has been made and you will ' \
+                                   'receive a confirmation text shortly.'
 
     return render_template('purchase.html', **options)

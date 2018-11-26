@@ -30,9 +30,24 @@
     <!--===============================================================================================-->
 </head>
 <body>
+
 <div class="container-contact100">
-    {% block content %}{% endblock %}
+    <div class="wrap-contact100">
+        {% block content %}{% endblock %}
+
+        <form action="/" method="get">
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn">
+                    <span>
+                        Home
+                        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
+
 </body>
 <!--===============================================================================================-->
 <script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
