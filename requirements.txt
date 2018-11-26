@@ -3,3 +3,4 @@ flask>=0.12.3
 zappa
 twilio
 Jinja2>=2.10
+gunicorn==19.7.1
