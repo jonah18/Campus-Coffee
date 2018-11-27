@@ -71,7 +71,7 @@ def confirm_deliverer():
     resp = config.db_table.get_item(
         Key={"PhoneNumber": deliverer_number})
 
-    deliverer = Deliverer(resp)
+    deliverer = Deliverer(resp['Item'])
 
     body = f'Your order has been received ' \
            f'by {deliverer.name}, ' \
