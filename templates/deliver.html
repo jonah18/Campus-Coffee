@@ -1,47 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
+<span class="contact100-form-title">
+            Welcome to Campus Coffee
+        </span>
 
-<form action="/dev/deliver" method="post" class="contact100-form validate-form">
-    <span class="contact100-form-title">
-        Deliver Coffee
+<span class="contact100-form-subtitle">
+        Are you registering or unregistering as a deliverer?
     </span>
 
-    <span class="contact100-form-subtitle">
-        {{ admin_message }}
-    </span>
-
-    <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
-        <span class="label-input100">FULL NAME *</span>
-        <input class="input100" type="text" name="Name" placeholder="Enter Your Name">
+<form action="/dev/deliver/register" method="get">
+    <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn" id="orderButton">
+                <span>
+                    Register
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                </span>
+        </button>
     </div>
+</form>
 
-    <div class="wrap-input100 validate-input bg1" data-validate=" Enter Your Phone Number">
-        <span class="label-input100">Phone *</span>
-        <input class="input100" type="text" name="PhoneNumber" placeholder="Enter Phone Number">
-    </div>
-
-    <div class="wrap-input100 input100-select bg1">
-        <span class="label-input100">Coffee Shop *</span>
-        <div>
-            <select class="js-select2" name="Shop">
-                <option>Please choose</option>
-                <option>Starbucks</option>
-                <option>Espresso Royale</option>
-            </select>
-            <div class="dropDownSelect2"></div>
-        </div>
-    </div>
-
+<form action="/dev/deliver/deregister" method="get">
     <div class="container-contact100-form-btn">
         <button class="contact100-form-btn">
             <span>
-                Submit
+                Deregister
                 <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
             </span>
         </button>
     </div>
-
 </form>
-
-
 {% endblock %}

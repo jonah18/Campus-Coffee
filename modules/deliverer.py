@@ -5,7 +5,10 @@ class Deliverer:
         """Initialize deliverer from json request."""
         self.name = deliverer_json['Name']
         self.number = self.format_number(deliverer_json['PhoneNumber'])
-        self.shop = deliverer_json['Shop']
+
+        # Shop will only be present on deliverer registration.
+        if 'Shop' in deliverer_json:
+            self.shop = deliverer_json['Shop']
 
     @staticmethod
     def format_number(number):
